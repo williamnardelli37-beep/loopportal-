@@ -93,6 +93,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer a{display:block;padding:3px 0}footer a:hover{color:#fff}
 .copy{border-top:1px solid #23365C;margin-top:26px;padding-top:18px;font-size:14px;width:100%}
 .wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#25D366;color:#fff;border-radius:50px;padding:12px 20px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.25);font-size:15px;z-index:20}
+.hact{display:flex;gap:10px;align-items:center}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:10px;background:var(--bg);cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
+.wa{display:flex;align-items:center;gap:8px;padding:10px 18px;font-size:14px}
 [hidden]{display:none!important}
 .legal{max-width:780px;margin:0 auto;padding:48px 20px 72px}
 .legal h1{font-size:34px;margin:0 0 6px}
@@ -102,7 +106,7 @@ footer a{display:block;padding:3px 0}footer a:hover{color:#fff}
 .legal .upd{font-size:14px;margin:0 0 20px}
 .ck{position:fixed;left:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.2);padding:14px 16px;display:flex;gap:14px;align-items:center;z-index:30;font-size:14px}
 .ck p{margin:0;color:var(--mute)}.ck a{color:var(--blue2);text-decoration:underline;font-weight:700}
-@media (max-width:640px){.ck{right:18px;bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+@media (max-width:640px){.ck{left:12px;right:76px;bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:10px 12px;font-size:12.5px;flex-direction:column;align-items:flex-start;gap:8px}}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
 .chip{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:8px 20px;font-weight:800;color:var(--blue2)}
@@ -143,7 +147,7 @@ footer a{display:block;padding:3px 0}footer a:hover{color:#fff}
 .hero .wrap,.steps,.plans,.g3{grid-template-columns:1fr}
 .grid4{grid-template-columns:1fr 1fr}
 .pts .wrap{grid-template-columns:1fr 1fr}
-h1{font-size:34px}h2{font-size:28px}.nav nav{display:none}section{padding:52px 0}.btn.sm.ghost{display:none}}
+h1{font-size:34px}h2{font-size:28px}h1{font-size:29px}h2{font-size:24px}body{font-size:16px}section{padding:44px 0}.wrap{padding:0 16px}.top{font-size:12.5px;padding:6px 10px;line-height:1.35}.nav{height:58px}.logo{font-size:19px;gap:8px}.logo svg{width:32px;height:32px}.burger{display:flex}.long{display:none}.btn{padding:12px 20px;font-size:15px}.btn.sm{padding:8px 14px;font-size:14px}.nav nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:4px 20px 12px;box-shadow:0 14px 24px rgba(0,0,0,.14)}header.open .nav nav{display:flex}.nav nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink)}.nav nav a:last-child{border-bottom:0}.hero,.aihero{padding:34px 0 36px}.hero .wrap,.aihero .wrap{gap:26px}.lead{font-size:17px;margin-bottom:20px}.cta .btn{flex:1 1 100%}.checks{gap:8px 14px;font-size:13px}.pts .wrap{padding:22px 16px;gap:14px}.pts b{font-size:19px}.pts span{font-size:13px}.sub{margin-bottom:26px;font-size:16px}.feat,.q{padding:20px}.plan{padding:22px}.price{font-size:38px}.final{padding:44px 0}details{padding:14px 16px}summary{font-size:16px}.legal{padding:30px 18px 56px}.legal h1{font-size:27px}.wa{padding:0;width:52px;height:52px;justify-content:center;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}.wa span{display:none}footer .wrap{gap:18px}}
 @media (max-width:520px){.grid4{grid-template-columns:1fr}}
 </style>
 </head>
@@ -154,7 +158,7 @@ h1{font-size:34px}h2{font-size:28px}.nav nav{display:none}section{padding:52px 0
 <svg width="40" height="40" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#1456C8"/><path d="M28.2 10.3A22 22 0 1 0 54 32" fill="none" stroke="#FF6B1A" stroke-width="4.5" stroke-linecap="round"/><path d="M54 22L47 33H61Z" fill="#FF6B1A" stroke="#FF6B1A" stroke-width="2" stroke-linejoin="round"/><path d="M20 23H24L27 36H40L43 27H25.5" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="29" cy="41.5" r="2.4" fill="#fff"/><circle cx="38" cy="41.5" r="2.4" fill="#fff"/></svg>
 Loop Web</a>
 <nav><a href="#servicos">O que fazemos</a><a href="#preco">Planos</a><a href="#sistema-ai">Sistema com AI</a><a href="#duvidas">Dúvidas</a></nav>
-<div style="display:flex;gap:10px;align-items:center"><a class="btn buy sm" data-wa href="#">Chamar no WhatsApp</a></div>
+<div class="hact"><a class="btn buy sm" data-wa href="#"><span class="long">Chamar no </span>WhatsApp</a><button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
 </div></header>
 
 <main id="home">
@@ -376,7 +380,7 @@ Loop Web</a>
 <div><a data-wa href="#">WhatsApp</a><a href="#sistema-ai">Sistema com AI</a><a href="#duvidas">Perguntas frequentes</a></div>
 <div class="copy">© 2026 Loop Web. Todos os direitos reservados.<a href="#termos" style="display:inline;margin-left:18px;text-decoration:underline">Termos de Uso</a><a href="#privacidade" style="display:inline;margin-left:18px;text-decoration:underline">Política de Privacidade</a></div>
 </div></footer>
-<a class="wa" data-wa href="#">Fale conosco no WhatsApp</a>
+<a class="wa" data-wa href="#" aria-label="Fale conosco no WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2z"/></svg><span>Fale conosco no WhatsApp</span></a>
 <script>
 var WA_NUMBER="5554996230237";
 var WA_MSG={geral:"Olá! Vi o site da Loop Web e quero uma prévia gratuita do site da minha empresa.\n\nMeu nome: \nNome da empresa: \nO que eu vendo ou faço: \n\nPode me ajudar?",
@@ -390,6 +394,7 @@ document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me
 var PAGES={"sistema-ai":["ai","Genius 1.3 | Sistema com AI | Loop Web"],termos:["termos","Termos de Uso | Loop Web"],privacidade:["privacidade","Política de Privacidade | Loop Web"]};
 function route(){var h=location.hash.slice(1),pg=PAGES[h];["home","ai","termos","privacidade"].forEach(function(id){document.getElementById(id).hidden=pg?pg[0]!==id:id!=="home"});document.title=pg?pg[1]:"Loop Web | Sites e sistema de vendas para a sua loja";var el=!pg&&h?document.getElementById(h):null;if(el){el.scrollIntoView()}else{window.scrollTo(0,0)}}
 window.addEventListener("hashchange",route);route();
+(function(){var h=document.querySelector("header"),b=document.getElementById("burger");b.onclick=function(){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o)};document.querySelectorAll(".nav nav a").forEach(function(a){a.addEventListener("click",function(){h.classList.remove("open");b.setAttribute("aria-expanded","false")})})})();
 (function(){var b=document.getElementById("ck");try{if(localStorage.getItem("loopweb-aviso"))b.hidden=true}catch(e){}document.getElementById("ckok").onclick=function(){b.hidden=true;try{localStorage.setItem("loopweb-aviso","1")}catch(e){}}})();
 (function(){var car=document.getElementById("car"),paused=false,t;
 function step(d){var c=car.querySelector(".shot");if(!c||!c.offsetWidth)return;var w=c.offsetWidth+20,max=car.scrollWidth-car.clientWidth,x=car.scrollLeft+d*w;if(x>max+4)x=0;if(x<0)x=max;car.scrollTo({left:x,behavior:"smooth"})}
