@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loop Web | Sites e sistema de vendas para a sua loja</title>
+<link rel="shortcut icon" href="loop-web-icone.svg" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0B3D91;--blue2:#1456C8;--orange:#FF6B1A;--orange2:#E85A0C;--green:#12A150;--bg:#fff;--soft:#F2F6FC;--ink:#13233F;--mute:#5A6A85;--line:#DCE4F0;--card:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1730;--soft:#101F3F;--ink:#EAF0FB;--mute:#9FB0CC;--line:#23365C;--card:#12234A;--blue:#17346F}}
+:root[data-theme="dark"]{--bg:#0C1730;--soft:#101F3F;--ink:#EAF0FB;--mute:#9FB0CC;--line:#23365C;--card:#12234A;--blue:#17346F}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito Sans',Arial,Helvetica,sans-serif;line-height:1.55;font-size:17px}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.top{background:var(--blue2);color:#fff;text-align:center;font-size:14px;padding:8px 12px;font-weight:600}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:22px;color:var(--blue2)}
+.nav nav{display:flex;gap:26px;font-weight:600;font-size:15px;color:var(--mute)}
+.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-block;border-radius:8px;padding:13px 24px;font-weight:800;font-size:16px;border:2px solid transparent;cursor:pointer;font-family:inherit;text-align:center}
+.btn.buy{background:var(--orange);color:#fff;box-shadow:0 3px 0 var(--orange2)}
+.btn.buy:hover{background:var(--orange2)}
+.btn.ghost{border-color:var(--blue2);color:var(--blue2);background:transparent}
+.btn.sm{padding:9px 18px;font-size:15px}
+.hero{background:linear-gradient(180deg,var(--soft),var(--bg));padding:64px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+h1{font-size:44px;line-height:1.1;margin:0 0 18px;font-weight:800;letter-spacing:-.5px}
+.lead{font-size:19px;color:var(--mute);margin:0 0 26px;max-width:30em}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.checks{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute);font-weight:600;padding:0;margin:0;list-style:none}
+.checks li:before{content:"✓";color:var(--green);font-weight:800;margin-right:6px}
+.mock{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(11,61,145,.14);overflow:hidden}
+.mock .bar{display:flex;gap:6px;align-items:center;padding:11px 14px;background:var(--soft);border-bottom:1px solid var(--line)}
+.mock .bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.mock .url{margin-left:10px;background:var(--card);border:1px solid var(--line);border-radius:20px;font-size:12px;padding:2px 12px;color:var(--mute)}
+.mock .body{padding:18px}
+.shop{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-weight:800}
+.shop span{font-size:12px;background:var(--orange);color:#fff;border-radius:20px;padding:3px 12px}
+.banner{background:var(--blue2);color:#fff;border-radius:10px;padding:18px;margin-bottom:14px;font-weight:800;font-size:18px}
+.banner small{display:block;font-weight:600;opacity:.85;font-size:13px}
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.p i{display:block;height:64px;border-radius:8px;background:var(--soft);margin-bottom:6px}
+.p:nth-child(2) i{background:#FFE3D2}.p:nth-child(3) i{background:#DDF5E6}
+.p b{font-size:13px;display:block}.p small{color:var(--mute);font-size:12px}
+.pts{background:var(--blue);color:#fff}
+.pts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:30px;padding-bottom:30px;text-align:center}
+.pts b{font-size:26px;display:block}
+.pts span{font-size:14px;opacity:.9}
+section{padding:72px 0}
+h2{font-size:34px;line-height:1.2;margin:0 0 12px;font-weight:800;letter-spacing:-.3px}
+.sub{color:var(--mute);max-width:36em;margin:0 0 38px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px}
+.feat .ic{width:44px;height:44px;border-radius:10px;background:var(--soft);display:grid;place-items:center;margin-bottom:14px;color:var(--blue2)}
+.feat h3{margin:0 0 6px;font-size:19px}
+.feat p{margin:0;color:var(--mute);font-size:16px}
+.alt{background:var(--soft)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.step{position:relative;padding-top:58px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:42px;height:42px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;display:grid;place-items:center;font-size:19px}
+.step h3{margin:0 0 6px;font-size:20px}
+.step p{margin:0;color:var(--mute)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;position:relative}
+.plan.hot{border:2px solid var(--orange);box-shadow:0 14px 34px rgba(255,107,26,.16)}
+.badge{position:absolute;top:-14px;left:24px;background:var(--orange);color:#fff;font-size:13px;font-weight:800;padding:3px 14px;border-radius:20px}
+.plan h3{margin:0;font-size:22px}
+.plan .d{color:var(--mute);font-size:15px;margin:4px 0 16px}
+.price{font-size:44px;font-weight:800;line-height:1}
+.price small{font-size:16px;color:var(--mute);font-weight:600}
+.fee{font-size:14px;color:var(--mute);margin-top:6px;font-weight:600}
+.plan ul{list-style:none;padding:0;margin:20px 0 24px;flex:1}
+.plan li{padding:6px 0 6px 26px;position:relative}
+.plan li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.plan .btn{display:block}
+.note{font-size:15px;color:var(--mute);margin-top:22px;max-width:44em}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer;font-size:18px}
+details p{margin:10px 0 0;color:var(--mute)}
+.final{background:var(--blue);color:#fff;text-align:center;padding:64px 0}
+.final h2{color:#fff}
+.final p{opacity:.9;margin:0 auto 26px;max-width:32em}
+footer{background:#0A1A38;color:#B7C4DD;font-size:15px;padding:40px 0 26px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer a{display:block;padding:3px 0}footer a:hover{color:#fff}
+.copy{border-top:1px solid #23365C;margin-top:26px;padding-top:18px;font-size:14px;width:100%}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#25D366;color:#fff;border-radius:50px;padding:12px 20px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.25);font-size:15px;z-index:20}
+[hidden]{display:none!important}
+.legal{max-width:780px;margin:0 auto;padding:48px 20px 72px}
+.legal h1{font-size:34px;margin:0 0 6px}
+.legal h2{font-size:21px;margin:30px 0 8px}
+.legal p,.legal li{color:var(--mute);font-size:16px}
+.legal ul{padding-left:22px;margin:8px 0}
+.legal .upd{font-size:14px;margin:0 0 20px}
+.ck{position:fixed;left:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.2);padding:14px 16px;display:flex;gap:14px;align-items:center;z-index:30;font-size:14px}
+.ck p{margin:0;color:var(--mute)}.ck a{color:var(--blue2);text-decoration:underline;font-weight:700}
+@media (max-width:640px){.ck{right:18px;bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:8px 20px;font-weight:800;color:var(--blue2)}
+.mp{display:inline-block;background:#009EE3;color:#fff;border-radius:8px;padding:3px 12px;font-weight:800;font-size:15px;margin-bottom:14px}
+.fine{font-size:13px;color:var(--mute);margin:22px 0 0}
+.carw{position:relative}
+.car{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px}
+.car::-webkit-scrollbar{display:none}
+.car .shot{flex:0 0 calc((100% - 40px)/3);scroll-snap-align:start}
+.cnav{display:flex;gap:10px;justify-content:center;margin-top:20px}
+.cnav button{width:44px;height:44px;border-radius:50%;border:2px solid var(--blue2);background:transparent;color:var(--blue2);font-size:22px;line-height:1;cursor:pointer;font-weight:800}
+.cnav button:hover{background:var(--blue2);color:#fff}
+.shot{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.shot .img{aspect-ratio:4/3;display:grid;place-items:center;align-content:center;gap:8px;text-align:center;background:var(--soft);color:var(--mute);font-size:15px;padding:16px;border-bottom:1px dashed var(--line)}
+.shot .img img{width:100%;height:100%;object-fit:cover}
+.shot figcaption{padding:14px 16px;font-size:15px;color:var(--mute)}
+.shot figcaption b{display:block;color:var(--ink)}
+@media (max-width:900px){.car .shot{flex-basis:calc((100% - 20px)/2)}}
+@media (max-width:520px){.car .shot{flex-basis:100%}}
+.aihero{background:linear-gradient(180deg,var(--soft),var(--bg));padding:64px 0 56px}
+.aihero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.pill{display:inline-block;background:var(--soft);border:1px solid var(--line);color:var(--blue2);border-radius:20px;padding:4px 14px;font-weight:800;font-size:14px;margin-bottom:16px}
+.chat{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(11,61,145,.14);overflow:hidden}
+.chat .head{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--blue2);color:#fff;font-weight:800}
+.chat .head i{width:10px;height:10px;border-radius:50%;background:#5CE08E}
+.chat .head small{margin-left:auto;font-weight:600;opacity:.85}
+.chat .msgs{padding:18px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:85%;padding:10px 14px;border-radius:14px;font-size:15px}
+.m.u{align-self:flex-end;background:var(--orange);color:#fff;border-bottom-right-radius:4px}
+.m.g{align-self:flex-start;background:var(--soft);border-bottom-left-radius:4px}
+.cap{font-size:13px;color:var(--mute);padding:0 18px 14px}
+.back{display:inline-block;margin-bottom:18px;color:var(--blue2);font-weight:700;font-size:15px}
+.list2{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;list-style:none;padding:0;margin:0}
+.list2 li{padding:8px 0 8px 28px;position:relative;border-bottom:1px solid var(--line)}
+.list2 li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+@media (max-width:900px){.aihero .wrap,.list2{grid-template-columns:1fr}.aihero h1{font-size:34px}}
+@media (max-width:900px){
+.hero .wrap,.steps,.plans,.g3{grid-template-columns:1fr}
+.grid4{grid-template-columns:1fr 1fr}
+.pts .wrap{grid-template-columns:1fr 1fr}
+h1{font-size:34px}h2{font-size:28px}.nav nav{display:none}section{padding:52px 0}.btn.sm.ghost{display:none}}
+@media (max-width:520px){.grid4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top">Você só paga se gostar: primeiro mandamos uma prévia do seu site, sem compromisso.</div>
+<header><div class="wrap nav">
+<a class="logo" href="#" aria-label="Loop Web">
+<svg width="40" height="40" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#1456C8"/><path d="M28.2 10.3A22 22 0 1 0 54 32" fill="none" stroke="#FF6B1A" stroke-width="4.5" stroke-linecap="round"/><path d="M54 22L47 33H61Z" fill="#FF6B1A" stroke="#FF6B1A" stroke-width="2" stroke-linejoin="round"/><path d="M20 23H24L27 36H40L43 27H25.5" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="29" cy="41.5" r="2.4" fill="#fff"/><circle cx="38" cy="41.5" r="2.4" fill="#fff"/></svg>
+Loop Web</a>
+<nav><a href="#servicos">O que fazemos</a><a href="#preco">Planos</a><a href="#sistema-ai">Sistema com AI</a><a href="#duvidas">Dúvidas</a></nav>
+<div style="display:flex;gap:10px;align-items:center"><a class="btn buy sm" data-wa href="#">Chamar no WhatsApp</a></div>
+</div></header>
+
+<main id="home">
+<div class="hero"><div class="wrap">
+<div>
+<h1>Veja o site da sua loja pronto antes de pagar</h1>
+<p class="lead">Criamos sites e sistema de vendas para lojas. Você conta a sua ideia pelo WhatsApp, a gente monta uma prévia e você decide se quer ficar.</p>
+<div class="cta"><a class="btn buy" data-wa href="#">Quero minha prévia grátis</a><a class="btn ghost" href="#como">Ver como funciona</a></div>
+<ul class="checks"><li>Prévia sem compromisso</li><li>Atendimento pelo WhatsApp</li><li>Planos a partir de R$ 50 por mês</li></ul>
+</div>
+<div class="mock" aria-hidden="true">
+<div class="bar"><i></i><i></i><i></i><span class="url">sualoja.com.br</span></div>
+<div class="body">
+<div class="shop"><span style="background:none;color:var(--ink);font-size:16px;padding:0">Sua Loja</span><span>Carrinho (2)</span></div>
+<div class="banner">Novidades da semana<small>Aproveite as ofertas e peça pelo site</small></div>
+<div class="prods">
+<div class="p"><i></i><b>Produto 1</b><small>R$ 59,90</small></div>
+<div class="p"><i></i><b>Produto 2</b><small>R$ 89,90</small></div>
+<div class="p"><i></i><b>Produto 3</b><small>R$ 39,90</small></div>
+</div></div></div>
+</div></div>
+
+<div class="pts"><div class="wrap">
+<div><b>Prévia grátis</b><span>antes de qualquer pagamento</span></div>
+<div><b>A partir de R$ 50/mês</b><span>mais R$ 100 por ano de manutenção</span></div>
+<div><b>Site + vendas</b><span>tudo no mesmo lugar</span></div>
+<div><b>WhatsApp</b><span>conversa direta com a gente</span></div>
+</div></div>
+
+<section id="servicos"><div class="wrap">
+<h2>O que a Loop Web faz pela sua loja</h2>
+<p class="sub">Você não precisa entender de tecnologia. A gente cuida da criação e deixa tudo pronto para você vender.</p>
+<div class="grid4">
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3>Site da sua loja</h3><p>Visual profissional, com o nome, as cores e os produtos do seu negócio.</p></div>
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h3l2 11h11l2-8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg></div><h3>Sistema de vendas</h3><p>Seus clientes escolhem os produtos e fazem o pedido direto pelo site.</p></div>
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Bom no celular</h3><p>A maioria das compras começa no celular, então o site é pensado para ele.</p></div>
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4z"/></svg></div><h3>Suporte de verdade</h3><p>Dúvida ou ajuste? Fale com a equipe pelo WhatsApp, sem robô e sem fila.</p></div>
+</div></div></section>
+
+<section id="pagamentos" class="alt"><div class="wrap">
+<span class="mp">Mercado Pago</span>
+<h2>Receba suas vendas pelo Mercado Pago</h2>
+<p class="sub" style="margin-bottom:22px">Seus clientes pagam do jeito que já conhecem e você acompanha tudo dentro do sistema. Disponível nos planos Vendas e Empresarial.</p>
+<div class="chips"><span class="chip">Pix</span><span class="chip">Cartão de crédito</span><span class="chip">Boleto</span></div>
+<div class="g3">
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Pagamento que o cliente conhece</h3><p>O Mercado Pago é familiar para quem compra online, o que ajuda o cliente a confiar e finalizar o pedido.</p></div>
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></div><h3>Tudo conferido no sistema</h3><p>Veja quais pedidos já foram pagos e quais ainda estão pendentes, sem abrir várias telas.</p></div>
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></div><h3>A gente conecta para você</h3><p>Você não precisa mexer em código. Nossa equipe liga a sua conta do Mercado Pago à sua loja.</p></div>
+</div>
+<p class="fine">As taxas de cada forma de pagamento são definidas pelo Mercado Pago. Mercado Pago é marca de seus respectivos titulares, e a Loop Web é uma empresa independente.</p>
+<div style="margin-top:26px"><a class="btn buy" data-wa href="#">Quero receber pelo Mercado Pago</a></div>
+</div></section>
+
+<section id="como"><div class="wrap">
+<h2>Como funciona, sem risco para você</h2>
+<p class="sub">Você vê o resultado antes de decidir. Se não gostar, não paga nada.</p>
+<div class="steps">
+<div class="step"><h3>Chame no WhatsApp</h3><p>Conte o que você vende e como imagina o seu site. Pode ser uma ideia simples.</p></div>
+<div class="step"><h3>Receba a prévia</h3><p>Montamos um site de demonstração com a sua cara e enviamos para você ver.</p></div>
+<div class="step"><h3>Decida se quer ficar</h3><p>Gostou? Escolha seu plano e o site entra no ar. Não gostou? Sem problema, você não paga nada.</p></div>
+</div>
+<div style="margin-top:36px"><a class="btn buy" data-wa href="#">Começar pelo WhatsApp</a></div>
+</div></section>
+
+<section id="preco"><div class="wrap">
+<h2>Escolha o plano certo para o seu negócio</h2>
+<p class="sub">Comece pelo mais simples e mude de plano quando a sua empresa crescer. Em todos, você vê a prévia antes de pagar.</p>
+<div class="plans">
+<div class="plan"><h3>Portfólio</h3><div class="d">Para mostrar sua empresa na internet</div>
+<div class="price">R$ 50<small> por mês</small></div><div class="fee">+ R$ 100 por ano de manutenção</div>
+<ul><li>Site portfólio da sua empresa</li><li>Seu link no Google</li><li>Bom no celular</li><li>Suporte pelo WhatsApp</li></ul>
+<a class="btn ghost" data-wa href="#">Pedir prévia grátis</a></div>
+<div class="plan hot"><span class="badge">Recomendado para lojas</span><h3>Vendas</h3><div class="d">Para vender e organizar a sua loja</div>
+<div class="price">R$ 120<small> por mês</small></div><div class="fee">+ R$ 100 por ano de manutenção</div>
+<ul><li>Tudo do plano Portfólio</li><li>Site de vendas com catálogo</li><li>Controle de estoque</li><li>Controle de pagamentos</li><li>Receba pelo Mercado Pago</li><li>Pedidos em um só painel</li></ul>
+<a class="btn buy" data-wa href="#">Pedir prévia grátis</a></div>
+<div class="plan"><h3>Empresarial</h3><div class="d">Para empresas com equipe e muito movimento</div>
+<div class="price">R$ 300<small> por mês</small></div><div class="fee">+ R$ 100 por ano de manutenção</div>
+<ul><li>Tudo do plano Vendas</li><li>Suporte a muitos funcionários</li><li>Leitor de código de barras</li><li>Inteligência artificial Genius 1.3</li><li>Tudo em um só sistema</li></ul>
+<a class="btn ghost" data-wa href="#">Falar com a equipe</a>
+<a href="#sistema-ai" style="text-align:center;margin-top:12px;font-weight:700;font-size:15px;color:var(--blue2);text-decoration:underline">Conheça o sistema com AI</a></div>
+</div>
+<p class="note">A taxa de manutenção de R$ 100 por ano vale para todos os planos e mantém o seu link no Google.</p>
+</div></section>
+
+<section id="clientes"><div class="wrap">
+<h2>Clientes satisfeitos com a Loop Web</h2>
+<p class="sub">Veja o que dizem as empresas que já estão com a gente.</p>
+<div class="carw"><div class="car" id="car">
+<figure class="shot"><div class="img"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg><span>Espaço para foto ou print do cliente</span></div><figcaption><b>Nome do cliente</b>Tipo de loja</figcaption></figure>
+<figure class="shot"><div class="img"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg><span>Espaço para foto ou print do cliente</span></div><figcaption><b>Nome do cliente</b>Tipo de loja</figcaption></figure>
+<figure class="shot"><div class="img"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg><span>Espaço para foto ou print do cliente</span></div><figcaption><b>Nome do cliente</b>Tipo de loja</figcaption></figure>
+<figure class="shot"><div class="img"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg><span>Espaço para foto ou print do cliente</span></div><figcaption><b>Nome do cliente</b>Tipo de loja</figcaption></figure>
+<figure class="shot"><div class="img"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg><span>Espaço para foto ou print do cliente</span></div><figcaption><b>Nome do cliente</b>Tipo de loja</figcaption></figure>
+<figure class="shot"><div class="img"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg><span>Espaço para foto ou print do cliente</span></div><figcaption><b>Nome do cliente</b>Tipo de loja</figcaption></figure>
+</div>
+<div class="cnav"><button type="button" id="cprev" aria-label="Anterior">‹</button><button type="button" id="cnext" aria-label="Próximo">›</button></div>
+</div>
+</div></section>
+
+<section id="duvidas" class="alt"><div class="wrap" style="max-width:820px">
+<h2>Perguntas frequentes</h2>
+<p class="sub">Outra dúvida? Chame a gente no WhatsApp.</p>
+<details><summary>Preciso pagar para ver a prévia?</summary><p>Não. Você conversa com a gente, recebe a prévia e só paga se decidir ficar com o site.</p></details>
+<details><summary>Quanto custa?</summary><p>O plano Portfólio custa R$ 50 por mês, o Vendas R$ 120 e o Empresarial R$ 300. Todos têm uma taxa de manutenção de R$ 100 por ano para manter o link no Google.</p></details>
+<details><summary>Como funcionam os pagamentos?</summary><p>Nos planos Vendas e Empresarial, seus clientes pagam pelo Mercado Pago, com Pix, cartão ou boleto, e você acompanha tudo no sistema. As taxas são as cobradas pelo Mercado Pago.</p></details>
+<details><summary>Qual plano escolher?</summary><p>Se você só quer mostrar a empresa, o Portfólio basta. Para vender online com estoque e pagamentos, escolha o Vendas. Com equipe grande, código de barras e AI, o Empresarial. Na dúvida, chame no WhatsApp.</p></details>
+<details><summary>Preciso saber de tecnologia?</summary><p>Não. Você explica sua ideia e nós construímos o site para você.</p></details>
+<details><summary>Vocês integram com marketplaces?</summary><p>Ainda não. Por enquanto trabalhamos com o site e o sistema de vendas da sua própria loja.</p></details>
+</div></section>
+
+<div class="final"><div class="wrap">
+<h2>Vamos montar a prévia da sua loja?</h2>
+<p>Mande uma mensagem contando a sua ideia. A gente cuida do resto e você decide depois de ver o site.</p>
+<a class="btn buy" data-wa href="#">Chamar no WhatsApp</a>
+</div></div>
+</main>
+<main id="ai" hidden>
+<div class="aihero"><div class="wrap">
+<div>
+<a class="back" href="#home">‹ Voltar ao início</a><br>
+<span class="pill">Plano Empresarial</span>
+<h1>Genius 1.3, a inteligência artificial do seu sistema de vendas</h1>
+<p class="lead">Pergunte sobre o seu negócio em linguagem simples e receba respostas na hora, sem abrir relatório e sem depender de ninguém.</p>
+<div class="cta"><a class="btn buy" data-wa href="#">Quero ver o Genius funcionando</a><a class="btn ghost" href="#planos-ai">Ver o que está incluso</a></div>
+</div>
+<div class="chat" aria-hidden="true">
+<div class="head"><i></i>Genius 1.3<small>exemplo ilustrativo</small></div>
+<div class="msgs">
+<div class="m u">Quais produtos estão acabando?</div>
+<div class="m g">Encontrei 3 produtos com estoque baixo. Quer que eu monte a lista de reposição?</div>
+<div class="m u">Quanto vendemos hoje?</div>
+<div class="m g">Hoje foram 37 pedidos e R$ 4.820 em vendas, com os pagamentos já conferidos.</div>
+</div>
+<div class="cap">Conversa de demonstração com dados fictícios.</div>
+</div>
+</div></div>
+
+<section><div class="wrap">
+<h2>O que o Genius faz pelo seu negócio</h2>
+<p class="sub">Ele trabalha dentro do sistema, com as informações da sua própria empresa.</p>
+<div class="grid4">
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4z"/></svg></div><h3>Responde em linguagem simples</h3><p>Escreva como você fala. Não precisa aprender comandos nem menus.</p></div>
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Entende vendas, estoque e pagamentos</h3><p>Consulte os números da sua operação em um só lugar.</p></div>
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.5 6 5.5"/></svg></div><h3>Ajuda a equipe toda</h3><p>Feito para empresas com muitos funcionários usando o sistema ao mesmo tempo.</p></div>
+<div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V6M6 12l6-6 6 6"/></svg></div><h3>Sempre evoluindo</h3><p>Esta é a versão 1.3 e o Genius continua sendo melhorado pela equipe da Loop Web.</p></div>
+</div></div></section>
+
+<section id="planos-ai" class="alt"><div class="wrap">
+<h2>Tudo em um só sistema</h2>
+<p class="sub">O Genius vem junto com o plano Empresarial, que reúne tudo o que uma empresa maior precisa.</p>
+<ul class="list2">
+<li>Site de vendas com catálogo</li><li>Controle de estoque</li><li>Controle de pagamentos</li><li>Leitor de código de barras</li><li>Suporte a muitos funcionários</li><li>Inteligência artificial Genius 1.3</li>
+</ul>
+<div style="margin-top:34px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+<div class="price">R$ 300<small> por mês</small></div>
+<div class="fee" style="margin:0">+ R$ 100 por ano de manutenção, que mantém o seu link no Google</div>
+</div>
+</div></section>
+
+<div class="final"><div class="wrap">
+<h2>Quer ver o Genius no seu negócio?</h2>
+<p>Chame a gente no WhatsApp, conte como é a sua empresa e mostramos uma prévia antes de você pagar.</p>
+<a class="btn buy" data-wa href="#">Chamar no WhatsApp</a>
+</div></div>
+</main>
+
+<main id="termos" hidden><div class="legal">
+<a class="back" href="#home">‹ Voltar ao início</a>
+<h1>Termos de Uso</h1>
+<p class="upd">Última atualização: 9 de outubro de 2026</p>
+<p>Estes termos explicam como funcionam o site da Loop Web e os serviços que oferecemos. Ao usar o site ou contratar um plano, você concorda com eles.</p>
+<h2>1. O que a Loop Web faz</h2>
+<p>Criamos sites e sistemas para empresas e lojas. Hoje oferecemos três planos: Portfólio (site para apresentar a empresa), Vendas (site de vendas com controle de estoque e de pagamentos) e Empresarial (sistema completo, com suporte a muitos funcionários, leitor de código de barras e a inteligência artificial Genius 1.3). A integração com marketplaces não faz parte dos serviços atuais. Funcionalidades podem mudar ou evoluir com o tempo.</p>
+<h2>2. Prévia gratuita</h2>
+<p>A prévia é uma demonstração enviada sem custo e sem obrigação de contratar. Só há cobrança se você aprovar a prévia e contratar um plano. Até a contratação, a prévia continua sendo da Loop Web e não pode ser publicada, copiada ou repassada a terceiros.</p>
+<h2>3. Valores e manutenção</h2>
+<p>Cada plano tem um valor mensal, informado no site ou pela nossa equipe no momento da contratação. Além disso, existe uma taxa anual de manutenção, que mantém o link do seu site no Google. A falta de pagamento pode levar à suspensão do site.</p>
+<h2>4. Pagamentos das vendas e Mercado Pago</h2>
+<p>Nos planos Vendas e Empresarial, os pagamentos das vendas da sua loja são processados pelo Mercado Pago, empresa independente da Loop Web, com termos e taxas próprios. A Loop Web não é instituição financeira e não é responsável pelo processamento, pela aprovação ou pelo repasse desses pagamentos. Mercado Pago é marca de seus respectivos titulares.</p>
+<h2>5. Responsabilidades do cliente</h2>
+<ul><li>Fornecer informações verdadeiras e manter seus dados atualizados.</li><li>Vender apenas produtos e serviços legais e ter direito de usar as imagens, textos e marcas que enviar para o site.</li><li>Cumprir a lei em relação aos seus próprios clientes, incluindo a proteção dos dados deles (LGPD).</li><li>Manter em sigilo suas senhas e acessos.</li></ul>
+<h2>6. Inteligência artificial (Genius 1.3)</h2>
+<p>O Genius 1.3 é uma ferramenta de apoio. Como toda inteligência artificial, ele pode errar ou dar respostas incompletas. Confira as informações importantes antes de tomar decisões. Ele não substitui contador, advogado ou outros profissionais.</p>
+<h2>7. Propriedade intelectual</h2>
+<p>A marca, o logotipo, os textos e o design da Loop Web pertencem a nós. Os conteúdos que você envia continuam sendo seus, e você nos autoriza a usá-los para criar e manter o seu site.</p>
+<h2>8. Cancelamento</h2>
+<p>Você pode pedir o cancelamento a qualquer momento pelo WhatsApp. As condições específicas, como prazos e valores já pagos, são informadas na contratação.</p>
+<h2>9. Limites de responsabilidade</h2>
+<p>Trabalhamos para manter o site e o sistema no ar, mas não garantimos funcionamento sem interrupções. Podem ocorrer manutenções e falhas, inclusive de serviços de terceiros como Google, Mercado Pago e WhatsApp, pelos quais não respondemos.</p>
+<h2>10. Alterações</h2>
+<p>Podemos atualizar estes termos. A versão em vigor é sempre a publicada nesta página, com a data de atualização no topo.</p>
+<h2>11. Lei aplicável e contato</h2>
+<p>Estes termos seguem a legislação brasileira. Quando o cliente for consumidor, vale o foro do seu domicílio, conforme o Código de Defesa do Consumidor. Para falar com a gente, use qualquer botão de WhatsApp do site.</p>
+</div></main>
+
+<main id="privacidade" hidden><div class="legal">
+<a class="back" href="#home">‹ Voltar ao início</a>
+<h1>Política de Privacidade</h1>
+<p class="upd">Última atualização: 9 de outubro de 2026</p>
+<p>A Loop Web respeita a sua privacidade e trata dados pessoais conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018, a LGPD). Aqui explicamos quais dados usamos, por quê e quais são os seus direitos.</p>
+<h2>1. Quais dados coletamos</h2>
+<ul><li><b>Dados que você nos envia:</b> ao nos chamar no WhatsApp, recebemos seu número, seu nome, o nome da sua empresa, o ramo de atividade e o conteúdo da conversa, incluindo imagens e arquivos que você mandar.</li><li><b>Dados técnicos:</b> ao abrir o site, seu navegador carrega as fontes de letra do Google Fonts, o que pode enviar seu endereço IP ao Google.</li><li><b>Sua escolha sobre o aviso de privacidade:</b> guardamos no seu próprio navegador a informação de que você fechou o aviso, para não mostrá-lo de novo.</li></ul>
+<p>Este site não coleta dados por formulários e não usa cookies de publicidade nem de rastreamento.</p>
+<h2>2. Para que usamos os dados</h2>
+<ul><li>Responder seu contato e enviar a prévia do seu site.</li><li>Contratar, criar, manter e dar suporte ao seu site ou sistema.</li><li>Cobrar os valores combinados e cumprir obrigações legais.</li></ul>
+<h2>3. Bases legais</h2>
+<p>Tratamos seus dados para realizar procedimentos preliminares e a execução do contrato que você pediu, para cumprir obrigações legais, com o seu consentimento quando necessário e, em alguns casos, por legítimo interesse, como melhorar o atendimento e manter o site seguro.</p>
+<h2>4. Com quem compartilhamos</h2>
+<p>Não vendemos seus dados. Eles podem passar por empresas que fazem parte do serviço: WhatsApp (Meta), para as conversas; Mercado Pago, quando você contrata pagamentos; Google, para fontes e para o link do seu site; e serviços de hospedagem. Também podemos compartilhar dados quando a lei ou uma autoridade exigir.</p>
+<h2>5. Dados dos clientes da sua loja</h2>
+<p>Se você contratar os planos Vendas ou Empresarial, os dados dos compradores da sua loja são de responsabilidade de você, que decide como usá-los. A Loop Web trata esses dados apenas para prestar o serviço e seguindo suas instruções.</p>
+<h2>6. Cookies</h2>
+<p>Hoje o site não usa cookies de rastreamento. Quando lançarmos uma área de login para clientes, ela poderá usar cookies necessários ao funcionamento, como o de sessão, e esta política será atualizada antes disso.</p>
+<h2>7. Por quanto tempo guardamos</h2>
+<p>Guardamos os dados pelo tempo necessário para as finalidades acima e para cumprir obrigações legais. Depois disso, eles são apagados ou anonimizados.</p>
+<h2>8. Seus direitos</h2>
+<p>Você pode pedir a confirmação de que tratamos seus dados, acesso, correção, anonimização, portabilidade, eliminação, informações sobre com quem compartilhamos e a revogação do consentimento. Também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+<h2>9. Segurança</h2>
+<p>Adotamos medidas razoáveis para proteger seus dados. Nenhum sistema é totalmente imune a falhas, por isso evite enviar informações sensíveis, como senhas e dados completos de cartão, pelo WhatsApp.</p>
+<h2>10. Menores de idade</h2>
+<p>Nossos serviços são voltados a empresas e maiores de 18 anos.</p>
+<h2>11. Contato e alterações</h2>
+<p>Para exercer seus direitos ou tirar dúvidas sobre privacidade, fale com a gente por qualquer botão de WhatsApp do site. Podemos atualizar esta política, e a versão em vigor é sempre a desta página.</p>
+</div></main>
+
+<div class="ck" id="ck" role="region" aria-label="Aviso de privacidade"><p>Este site não usa cookies de publicidade nem de rastreamento. Saiba mais na <a href="#privacidade">Política de Privacidade</a>.</p><button class="btn buy sm" id="ckok" type="button">Entendi</button></div>
+
+<footer><div class="wrap">
+<div><div class="logo" style="color:#fff;margin-bottom:8px">Loop Web</div>Sites e sistema de vendas para lojas.</div>
+<div><a href="#servicos">O que fazemos</a><a href="#como">Como funciona</a><a href="#preco">Planos</a></div>
+<div><a data-wa href="#">WhatsApp</a><a href="#sistema-ai">Sistema com AI</a><a href="#duvidas">Perguntas frequentes</a></div>
+<div class="copy">© 2026 Loop Web. Todos os direitos reservados.<a href="#termos" style="display:inline;margin-left:18px;text-decoration:underline">Termos de Uso</a><a href="#privacidade" style="display:inline;margin-left:18px;text-decoration:underline">Política de Privacidade</a></div>
+</div></footer>
+<a class="wa" data-wa href="#">Fale conosco no WhatsApp</a>
+<script>
+var WA_NUMBER="5554996230237";
+var WA_MSG={geral:"Olá! Vi o site da Loop Web e quero uma prévia gratuita do site da minha empresa.\n\nMeu nome: \nNome da empresa: \nO que eu vendo ou faço: \n\nPode me ajudar?",
+"Portfólio":"Olá! Tenho interesse no plano Portfólio da Loop Web. Quero um site para mostrar a minha empresa na internet e gostaria de receber uma prévia.\n\nMeu nome: \nNome da empresa: \nRamo de atuação: ",
+Vendas:"Olá! Tenho interesse no plano Vendas da Loop Web. Quero vender online com controle de estoque e pagamentos e gostaria de receber uma prévia.\n\nMeu nome: \nNome da loja: \nO que eu vendo: ",
+Empresarial:"Olá! Tenho interesse no plano Empresarial da Loop Web. Minha empresa tem equipe e quero conhecer o sistema completo, com código de barras e o Genius 1.3.\n\nMeu nome: \nNome da empresa: \nQuantos funcionários usariam o sistema: ",
+pagamentos:"Olá! Quero receber as vendas da minha loja pelo Mercado Pago. Como funciona na Loop Web?\n\nMeu nome: \nNome da loja: ",
+ai:"Olá! Quero conhecer o Genius 1.3, a inteligência artificial do sistema da Loop Web. Podemos marcar uma demonstração?\n\nMeu nome: \nNome da empresa: "};
+function waText(a){var p=a.closest(".plan");if(p){var n=p.querySelector("h3").textContent;if(WA_MSG[n])return WA_MSG[n]}if(a.closest("#ai"))return WA_MSG.ai;if(a.closest("#pagamentos"))return WA_MSG.pagamentos;return WA_MSG.geral}
+document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(waText(a));a.target="_blank";a.rel="noopener"});
+var PAGES={"sistema-ai":["ai","Genius 1.3 | Sistema com AI | Loop Web"],termos:["termos","Termos de Uso | Loop Web"],privacidade:["privacidade","Política de Privacidade | Loop Web"]};
+function route(){var h=location.hash.slice(1),pg=PAGES[h];["home","ai","termos","privacidade"].forEach(function(id){document.getElementById(id).hidden=pg?pg[0]!==id:id!=="home"});document.title=pg?pg[1]:"Loop Web | Sites e sistema de vendas para a sua loja";var el=!pg&&h?document.getElementById(h):null;if(el){el.scrollIntoView()}else{window.scrollTo(0,0)}}
+window.addEventListener("hashchange",route);route();
+(function(){var b=document.getElementById("ck");try{if(localStorage.getItem("loopweb-aviso"))b.hidden=true}catch(e){}document.getElementById("ckok").onclick=function(){b.hidden=true;try{localStorage.setItem("loopweb-aviso","1")}catch(e){}}})();
+(function(){var car=document.getElementById("car"),paused=false,t;
+function step(d){var c=car.querySelector(".shot");if(!c||!c.offsetWidth)return;var w=c.offsetWidth+20,max=car.scrollWidth-car.clientWidth,x=car.scrollLeft+d*w;if(x>max+4)x=0;if(x<0)x=max;car.scrollTo({left:x,behavior:"smooth"})}
+document.getElementById("cprev").onclick=function(){step(-1)};
+document.getElementById("cnext").onclick=function(){step(1)};
+["mouseenter","focusin","touchstart"].forEach(function(e){car.parentNode.addEventListener(e,function(){paused=true},{passive:true})});
+["mouseleave","focusout","touchend"].forEach(function(e){car.parentNode.addEventListener(e,function(){paused=false},{passive:true})});
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){setInterval(function(){if(!paused&&!document.hidden)step(1)},3500)}
+})();
+</script>
+</body>
+</html>
